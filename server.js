@@ -32,11 +32,6 @@ console.log("console")
 // Routes
 
 
-$.ajax({
-  method: "POST",
-  url: "/scrape"
-});
-
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with axios
