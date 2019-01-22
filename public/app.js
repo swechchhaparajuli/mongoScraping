@@ -27,9 +27,9 @@ $.getJSON("/articles", function(data) {
         // The title of the article
         $("#notes").append("<h2>" + data.title + "</h2>");
         // An input to enter a new title
-        $("#notes").append("<input id='titleinput' name='title' >");
+        $("#notes").append("<form><div class= 'form-group'><input type='email' id='titleinput' name='title' class='form-control' id='exampleInputEmail1' placeholder='Name'>");
         // A textarea to add a new note body
-        $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
+        $("#notes").append("<div class='form-group'><textarea class='form-control' id='bodyinput' name='body' id='exampleFormControlTextarea1' rows='5'></textarea></div>");
         // A button to submit a new note, with the id of the article saved to it
         $("#notes").append("<button type= 'button' class = 'btn btn-warning' data-id='" + data._id + "' id='savenote'>Save Note</button>");
   
