@@ -18,6 +18,7 @@
 
     TO BE ADDED: 
         -the cooler background (giant golden gate bridge) that for some reason doesn't show up
+        - the comments formatting has been fixed on app, just not on the screencast because I ran out of my free trial
 
 **GIF or Video**
 
