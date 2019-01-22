@@ -17,7 +17,6 @@
 **User flow**
 
     TO BE ADDED: 
-        -formatting the comments so that user/subject and the actual comment show better
         -the cooler background (giant golden gate bridge) that for some reason doesn't show up
 
 **GIF or Video**
