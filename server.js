@@ -31,6 +31,12 @@ mongoose.connect("mongodb://localhost/kqedScraper", { useNewUrlParser: true });
 console.log("console")
 // Routes
 
+
+$.ajax({
+  method: "POST",
+  url: "/scrape"
+});
+
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with axios
@@ -54,6 +60,8 @@ app.get("/scrape", function(req, res) {
       result.image = $(element)
       .children("a").children("div").children("img")
         .attr("src");
+      result.excerpt = $(element)
+        .children("div").children('.src-components-Card-components-CardRow-___CardRow__card_Excerpt___3Icvy').text();
       // Create a new Article using the `result` object built from scraping
       db.Article.create(result)
         .then(function(dbArticle) {

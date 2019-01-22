@@ -1,9 +1,16 @@
+
+
+    $.ajax({
+      method: "POST",
+      url: "/scrape"
+  });
+
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
       // Display the apropos information on the page
-      $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<img src = '" + data[i].image + "'> <h1><a href=https://www.kqed.org" + data[i].link + ">" + data[i].title + "</a></h1></p><br />");
+      $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<img src = '" + data[i].image + "'> <h1><a href=https://www.kqed.org" + data[i].link + ">" + data[i].title + "</a></h1>"+ data[i].excerpt + "</p><br />");
       
     }
   });
@@ -35,17 +42,18 @@ $.getJSON("/articles", function(data) {
   
         // If there's a note in the article
         if (data.note) {
-          // Place the title of the note in the title input
-          $("#titleinput").val(data.note.title);
-          // Place the body of the note in the body textarea
-          $("#bodyinput").val(data.note.body);
+      
+          $("#comments").empty();
+          $("#comments").append(data.note.title);
+          $("#comments").append(data.note.body);
+          
+        } else{
+          $("#comments").empty();
+          $("#comments").append("<h3> No Comments Yet! </h3>")
         }
       });
   });
 
-  $(document).on("click", ".scrapeEm", function(){
-
-  });
   
   // When you click the savenote button
   $(document).on("click", "#savenote", function() {
